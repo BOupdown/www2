@@ -135,16 +135,16 @@
         );
     
  
-// Encodez votre tableau en JSON
-$json_data = json_decode($boulangerie);
+// // Encodez votre tableau en JSON
+// $json_data = json_decode($boulangerie);
 
-// Ouvrez le fichier en écriture
-$file = fopen('boulangerie.json', 'w');
+// // Ouvrez le fichier en écriture
+// $file = fopen('boulangerie.json', 'w');
 
-// Écrivez le JSON dans le fichier
-fwrite($file, $json_data);
+// // Écrivez le JSON dans le fichier
+// fwrite($file, $json_data);
 
-// Fermez le fichier
-fclose($file);
+// // Fermez le fichier
+// fclose($file);
 
 ?>

@@ -71,7 +71,7 @@
     <div class="mon-texte">
     <div  id="monDiv">
       <br><br><br>
-      <button ><a href="connexion.php">Connexion</a></button>
+      <button style="margin: 15px 30px"><a href="connexion.php" >Connexion</a></button>
     </div>
     </div>
 
