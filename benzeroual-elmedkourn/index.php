@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
 
     <title>Oasis News</title>
     <meta charset="UTF-8">
@@ -12,23 +12,18 @@
 
 
 
-  </head>
+</head>
 
-  <body>
-  <style>
-    
-    a {
-    text-decoration: none;
-    }
-
-    
-  
-  
-</style>
+<body>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
 
 
-    
-    
+
+
     <a href="https://www.oasis-sirop.com"><img src="img/feran.png" class="imageSite" alt="Photo du site" width="200" height="150"></a>
     <br>
     <div class="barre">
@@ -38,6 +33,7 @@
                 <li><a href="produit.php?cat=boulangerie">Boulangerie</a></li> <!-- retirer le ".php" en trop -->
                 <li><a href="produit.php?cat=patisserie">Pâtisserie</a></li>
                 <li><a href="produit.php?cat=viennoiserie">Viennoiserie</a></li> <!-- retirer le ".php" en trop -->
+                <li><a href="panier.php">Panier</a></li>
                 <li><a href="contact.php">Contact</a></li> <!-- retirer le ".php" en trop -->
             </ul>
         </nav>
@@ -48,58 +44,60 @@
     <br>
 
     <?php
-        session_start();
+    session_start();
 
- 
 
-        
+
+
     ?>
 
-    
+
 
 
 
     <div class="menu">
-      <ul>
-        <li><a href="index.php">Accueil</a></li>
-        <li><a href="produit.php?cat=boulangerie">Boulangerie</a></li>
-        <li><a href="produit.php?cat=patisserie">Patisserie</a></li>
-        <li><a href="produit.php?cat=viennoiserie">Viennoiserie</a></li>
-        <li><a href="contact.php">Contact</a></li>
-    </ul>
+        <ul>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="produit.php?cat=boulangerie">Boulangerie</a></li>
+            <li><a href="produit.php?cat=patisserie">Patisserie</a></li>
+            <li><a href="produit.php?cat=viennoiserie">Viennoiserie</a></li>
+            <li><a href="panier.php">Panier</a></li>
+            <li><a href="contact.php">Contact</a></li>
+        </ul>
     </div>
     <div class="mon-texte">
-    <div  id="monDiv" style="margin-top: 10vh">
-      <button style="margin: 15px 30px"><a href="inscription.php" >Inscription</a></button>
-      <button style="margin: 15px 30px"><a href="connexion.php" >Connexion</a></button>
-    </div>
+        <div id="monDiv" style="margin-top: 10vh">
+            <button style="margin: 15px 30px"><a href="inscription.php">Inscription</a></button>
+            <button style="margin: 15px 30px"><a href="connexion.php">Connexion</a></button>
+        </div>
     </div>
 
     <div style="text-align: center;">
-      <video src="img/patiss.mp4" width="640" height="360" controls autoplay></video>
+        <video src="img/patiss.mp4" width="640" height="360" controls autoplay></video>
     </div>
-    
-   <h1 style="text-align: center;">Bienvenue sur notre site de patisserie et boulangerie !</h1>
-   
-   <footer>
-    <div class="footer-content">
-      <div class="footer-section about">
-        <h2 class="logo-text">O & N Délices</h2>
-        <div class="socials">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
+
+    <h1 style="text-align: center;">Bienvenue sur notre site de patisserie et boulangerie !</h1>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2 class="logo-text">O & N Délices</h2>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
         </div>
-      </div>
-      
-    </div>
-    <div class="footer-bottom">
-      &copy; Oasis News | Créé par Omar and Nezar
-    </div>
-  </footer>
-  
+        <div class="footer-bottom">
+            &copy; Oasis News | Créé par Omar and Nezar
+        </div>
+    </footer>
 
 
-  
-  </body>
+
+
+</body>
+
 </html>

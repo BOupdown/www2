@@ -1,8 +1,1 @@
-[
-  {
-    "nom": "BENZEROUAL",
-    "prenom": "Omar",
-    "username": "admin",
-    "password": "toto"
-  }
-]
+[{"nom":"BENZEROUAL","prenom":"Omar","username":"admin","password":"toto"},{"nom":"dd","prenom":"dd","username":"dd","password":"dd"}]
