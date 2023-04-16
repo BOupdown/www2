@@ -69,8 +69,8 @@
     </ul>
     </div>
     <div class="mon-texte">
-    <div  id="monDiv">
-      <br><br><br>
+    <div  id="monDiv" style="margin-top: 10vh">
+      <button style="margin: 15px 30px"><a href="inscription.php" >Inscription</a></button>
       <button style="margin: 15px 30px"><a href="connexion.php" >Connexion</a></button>
     </div>
     </div>
