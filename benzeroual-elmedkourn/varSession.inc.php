@@ -1,49 +1,49 @@
-<?php
-// Démarrer la session
-session_start();
+    <?php
+    // Démarrer la session
+    session_start();
 
-// Tableau des catégories avec les produits et leurs informations
-$taille = 300;
+    // Tableau des catégories avec les produits et leurs informations
+    $taille = 300;
 
-$boulangerie = array(
-    array(
-        "ref" => "ref1",
-        "nom" => "Baguette",
-        "prix" => "1.0 euros",
-        "description" => "La baguette traditionnelle française, croustillante à l'extérieur et moelleuse à l'intérieur.",
-        "image" => "img/baguette.jpg"
-    ),
-    array(
-        "ref" => "ref2",
-        "nom" => "Pain rond",
-        "prix" => "1.50 euros",
-        "description" => "Un pain rond aux notes légèrement sucrées, parfait pour les sandwiches ou les tartines.",
-        "image" => "img/painrond.jpeg"
-    ),
-    array(
-        "ref" => "ref3",
-        "nom" => "Couronne Bordelaise",
-        "prix" => "1.5 euros",
-        "description" => "Une couronne de pain aux accents de vin rouge de Bordeaux, idéale pour accompagner une planche de charcuterie.",
-        "image" => "img/couronneBordelaise.jpg"
-    ),
-    array(
-        "ref" => "ref4",
-        "nom" => "Bagel",
-        "prix" => "1.0 euros",
-        "description" => "Un petit pain rond et moelleux, avec un trou au milieu, parfait pour y mettre du fromage frais, du saumon fumé ou du bacon.",
-        "image" => "img/bagel.png"
-    ),
-    array(
-        "ref" => "ref5",
-        "nom" => "Pain Multigrains",
-        "prix" => "1.50 euros",
-        "description" => "Un pain aux multiples céréales, riches en fibres et en goût.",
-        "image" => "img/pain multigrains.png"
-    )
-);
+    $boulangerie = array(
+        array(
+            "ref" => "ref1",
+            "nom" => "Baguette",
+            "prix" => "1.0 euros",
+            "description" => "La baguette traditionnelle française, croustillante à l'extérieur et moelleuse à l'intérieur.",
+            "image" => "img/baguette.jpg"
+        ),
 
-
+        
+        array(
+            "ref" => "ref2",
+            "nom" => "Pain rond",
+            "prix" => "1.50 euros",
+            "description" => "Un pain rond aux notes légèrement sucrées, parfait pour les sandwiches ou les tartines.",
+            "image" => "img/painrond.jpeg"
+        ),
+        array(
+            "ref" => "ref3",
+            "nom" => "Couronne Bordelaise",
+            "prix" => "1.5 euros",
+            "description" => "Une couronne de pain aux accents de vin rouge de Bordeaux, idéale pour accompagner une planche de charcuterie.",
+            "image" => "img/couronneBordelaise.jpg"
+        ),
+        array(
+            "ref" => "ref4",
+            "nom" => "Bagel",
+            "prix" => "1.0 euros",
+            "description" => "Un petit pain rond et moelleux, avec un trou au milieu, parfait pour y mettre du fromage frais, du saumon fumé ou du bacon.",
+            "image" => "img/bagel.png"
+        ),
+        array(
+            "ref" => "ref5",
+            "nom" => "Pain Multigrains",
+            "prix" => "1.50 euros",
+            "description" => "Un pain aux multiples céréales, riches en fibres et en goût.",
+            "image" => "img/pain multigrains.png"
+        )
+    );
 
     $patisserie = array(
         array(
@@ -52,8 +52,8 @@ $boulangerie = array(
             "prix" => "6 euros",
             "image" => "img/img1.png",
             "description" => "Paris Brest: Une pâtisserie française en forme de couronne, faite de pâte à choux, garnie de crème pralinée et d'amandes effilées."
-
-
+    
+    
         ),
         array(
             "ref" => "ref7",
@@ -61,8 +61,8 @@ $boulangerie = array(
             "prix" => "2.5 euros",
             "image" => "img/img2.png",
             "description" => "Macarons: Des petits biscuits ronds et colorés, avec une coque croquante et une ganache fondante au milieu, originaires de France.",
-
-
+    
+    
         ),
         array(
             "ref" => "ref8",
@@ -70,8 +70,8 @@ $boulangerie = array(
             "prix" => "3 euros",
             "image" => "img/img3.png",
             "description" => "Éclairs: Des pâtisseries allongées en forme de tube, faites de pâte à choux, remplies de crème pâtissière et garnies de glaçage au chocolat.",
-
-
+    
+    
         ),
         array(
             "ref" => "ref9",
@@ -79,21 +79,21 @@ $boulangerie = array(
             "prix" => "5 euros",
             "image" => "img/img5.png",
             "description" => "Forêt Noire: Un gâteau allemand en couches, composé de génoise au chocolat, de crème fouettée et de cerises, souvent décoré de copeaux de chocolat noir.",
-
+    
         ),
-
+    
         array(
             "ref" => "ref10",
             "nom" => "Millefeuilles",
             "prix" => "10 euros",
             "image" => "img/img4.png",
             "description" => "Millefeuille: Un dessert français classique à base de feuilletage, de crème pâtissière et de glaçage royal.",
-
+    
         ),
-
+    
     );
-
-
+    
+    
     $viennoiserie = array(
         array(
             "ref" => "ref11",
@@ -115,7 +115,7 @@ $boulangerie = array(
             "prix" => "1.5 euros",
             "image" => "img/img8.png",
             "description" => "Le pain au chocolat : une viennoiserie en forme de bâtonnet, feuilletée et fourrée de chocolat, souvent mangée au petit-déjeuner ou en collation."
-           
+        
         ),
         array(
             "ref" => "ref14",
@@ -123,7 +123,7 @@ $boulangerie = array(
             "prix" => "2.5 euros",
             "image" => "img/img9.png",
             "description" => "La brioche : une viennoiserie en forme de boule ou de tresse, moelleuse et sucrée, souvent servie au petit-déjeuner ou en dessert."
-           
+        
         ),
         array(
             "ref" => "ref15",
@@ -133,5 +133,18 @@ $boulangerie = array(
             "description" => "La tarte Tatin : cette tarte aux pommes renversée est souvent considérée comme une viennoiserie en raison de sa croûte feuilletée et croustillante. "
         )
         );
+    
+ 
+// Encodez votre tableau en JSON
+$json_data = json_decode($boulangerie);
+
+// Ouvrez le fichier en écriture
+$file = fopen('boulangerie.json', 'w');
+
+// Écrivez le JSON dans le fichier
+fwrite($file, $json_data);
+
+// Fermez le fichier
+fclose($file);
 
 ?>

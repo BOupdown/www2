@@ -126,3 +126,59 @@ var cpb = prixbaguette + prixcouronne + prixpainrond;
   function clickConnexion() {
     <a href="index.php">Accueil</a>
   }
+
+  const form = document.querySelector('form');
+
+form.addEventListener('submit', (event) => {
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const dob = document.getElementById('dob');
+  const phone = document.getElementById('phone');
+  const emploi = document.getElementById('emploi');
+  const subject = document.getElementById('subject');
+  const message = document.getElementById('message');
+  
+  const nameError = document.getElementById('name-error');
+  const emailError = document.getElementById('email-error');
+  const dobError = document.getElementById('dob-error');
+  const phoneError = document.getElementById('phone-error');
+  const emploiError = document.getElementById('emploi-error');
+  const subjectError = document.getElementById('subject-error');
+  const messageError = document.getElementById('message-error');
+  
+  if (name.value.trim() === '') {
+    event.preventDefault();
+    nameError.textContent = 'Le nom est obligatoire';
+  }
+  
+  if (email.value.trim() === '') {
+    event.preventDefault();
+    emailError.textContent = 'L\'adresse email est obligatoire';
+  }
+  
+  if (dob.value.trim() === '') {
+    event.preventDefault();
+    dobError.textContent = 'La date de naissance est obligatoire';
+  }
+  
+  if (phone.value.trim() === '') {
+    event.preventDefault();
+    phoneError.textContent = 'Le numéro de téléphone est obligatoire';
+  }
+  
+  if (emploi.value.trim() === '') {
+    event.preventDefault();
+    emploiError.textContent = 'L\'emploi est obligatoire';
+  }
+  
+  if (subject.value.trim() === '') {
+    event.preventDefault();
+    subjectError.textContent = 'Le sujet est obligatoire';
+  }
+  
+  if (message.value.trim() === '') {
+    event.preventDefault();
+    messageError.textContent = 'Le message est obligatoire';
+  }
+});
+

@@ -38,7 +38,7 @@
                 <li><a href="produit.php?cat=boulangerie">Boulangerie</a></li> <!-- retirer le ".php" en trop -->
                 <li><a href="produit.php?cat=patisserie">Pâtisserie</a></li>
                 <li><a href="produit.php?cat=viennoiserie">Viennoiserie</a></li> <!-- retirer le ".php" en trop -->
-                <li><a href="index.php?contact.php">Contact</a></li> <!-- retirer le ".php" en trop -->
+                <li><a href="contact.php">Contact</a></li> <!-- retirer le ".php" en trop -->
             </ul>
         </nav>
     </div>
@@ -49,7 +49,7 @@
 
     <?php
         session_start();
-        
+
  
 
         
@@ -62,9 +62,9 @@
     <div class="menu">
       <ul>
         <li><a href="index.php">Accueil</a></li>
-        <li><a href="boulangerie.php">Boulangerie</a></li>
-        <li><a href="patisserie.php">Patisserie</a></li>
-        <li><a href="viennoiserie.php">Viennoiserie</a></li>
+        <li><a href="produit.php?cat=boulangerie">Boulangerie</a></li>
+        <li><a href="produit.php?cat=patisserie">Patisserie</a></li>
+        <li><a href="produit.php?cat=viennoiserie">Viennoiserie</a></li>
         <li><a href="contact.php">Contact</a></li>
     </ul>
     </div>

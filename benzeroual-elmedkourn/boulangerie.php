@@ -3,10 +3,10 @@
 
   <head>
 
-    <title>Oasis News</title>
+    <title>O & N Délices</title>
     <meta charset="UTF-8">
-    <meta name="description" content="Oasis News fournit les dernières news avec une touche de fruité">
-    <meta name="keywords" content="oasis, fruits, news">
+    <meta name="description" content="boulangerie">
+    <meta name="keywords" content="croissants">
     <meta name="author" lang="fr" content="Omar and Nezar" />
     <link rel="stylesheet" type="text/css" href="css/oasisCss.css">
 

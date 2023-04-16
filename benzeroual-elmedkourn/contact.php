@@ -71,9 +71,9 @@
       <nav>
         <ul>
           <li><a href="index.php">Accueil</a></li>
-          <li><a href="boulangerie.php">Boulangerie</a></li>
-          <li><a href="patisserie.php">Patisserie</a></li>
-          <li><a href="viennoiserie.php">Viennoiserie</a></li>
+          <li><a href="produit.php?cat=boulangerie">Boulangerie</a></li>
+          <li><a href="produit.php?cat=patisserie">Patisserie</a></li>
+          <li><a href="produit.php?cat=viennoiserie">Viennoiserie</a></li>
           <li><a href="contact.php">Contact</a></li>
         </ul>
       </nav>
@@ -83,49 +83,149 @@
     session_start();
     ?>
 
-<style>
-		input[type="submit"] {
-			background-color: orange;
-			color: white;
-			border: none;
-			padding: 10px 20px;
-			cursor: pointer;
-		}
-	</style>
+<h1>Formulaire de contact</h1>
 
-    <h1>Formulaire de contact</h1>
+<div class="form-container">
+  <form action="#" method="POST">
+    <label for="name">Nom :</label>
+    <input type="text" id="name" name="name" required>
+    <?php
+    if(isset($_POST['submit'])){
+      if(empty($_POST['name'])){
+        echo "<p class='error'>Veuillez saisir votre nom</p>";
+      }
+    }
+    ?>
+  
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+    <?php
+    if(isset($_POST['submit'])){
+      if(empty($_POST['email'])){
+        echo "<p class='error'>Veuillez saisir votre adresse e-mail</p>";
+      }
+    }
+    ?>
+  
+    <label for="dob">Date de naissance :</label>
+    <input type="date" id="dob" name="dob">
+    <?php
+    if(isset($_POST['submit'])){
+      if(empty($_POST['dob'])){
+        echo "<p class='error'>Veuillez saisir votre date de naissance</p>";
+      }
+    }
+    ?>
+    <br><br>
+  
+    <label for="phone">Téléphone :</label>
+    <input type="tel" id="phone" name="phone">
+  
+    <label for="emploi">Emploi :</label>
+    <select id="emploi" name="emploi">
+      <option value="">Sélectionner un emploi</option>
+      <option value="developpeur">Développeur</option>
+      <option value="designer">Designer</option>
+      <option value="consultant">Consultant</option>
+      <option value="marketing">Marketing</option>
+    </select>
+    <?php
+    if(isset($_POST['submit'])){
+      if(empty($_POST['emploi'])){
+        echo "<p class='error'>Veuillez sélectionner votre emploi</p>";
+      }
+    }
+    ?><br><br>
+  
+    <label for="subject">Sujet :</label>
+    <input type="text" id="subject" name="subject" required>
+    <?php
+    if(isset($_POST['submit'])){
+      if(empty($_POST['subject'])){
+        echo "<p class='error'>Veuillez saisir le sujet de votre message</p>";
+      }
+    }
+    ?>
+  
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" required></textarea>
+    <?php
+    if(isset($_POST['submit'])){
+      if(empty($_POST['message'])){
+        echo "<p class='error'>Veuillez saisir votre message</p>";
+      }
+    }
+    ?>
+  
+    <button type="submit" name="submit">Envoyer</button>
+  </form>
+</div>
 
-    <div class="form-container">
 
-      <form action="#" method="POST">
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required>
-    
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-    
-        <label for="dob">Date de naissance :</label>
-        <input type="date" id="dob" name="dob">
-        <br><br>
-        <label for="phone">Téléphone :</label>
-        <input type="tel" id="phone" name="phone">
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $dob = $_POST['dob'];
+  $phone = $_POST['phone'];
+  $emploi = $_POST['emploi'];
+  $subject = $_POST['subject'];
+  $message = $_POST['message'];
+  
+  $errors = [];
+  
+  if (empty($name)) {
+    $errors['name'] = 'Le nom est obligatoire';
+  }
+  
+  if (empty($email)) {
+    $errors['email'] = 'L\'adresse email est obligatoire';
+  }
+  
+  if (empty($dob)) {
+    $errors['dob'] = 'La date de naissance est obligatoire';
+  }
+  
+  if (empty($phone)) {
+    $errors['phone'] = 'Le numéro de téléphone est obligatoire';
+  }
+  
+  if (empty($emploi)) {
+    $errors['emploi'] = 'L\'emploi est obligatoire';
+  }
+  
+  if (empty($subject)) {
+    $errors['subject'] = 'Le sujet est obligatoire';
+  }
+  
+  if (empty($message)) {
+    $errors['message'] = 'Le message est obligatoire';
+  }
+  
+  if (count($errors) === 0) {
+    // Envoi de l'email
+    // ...
+    // Redirection vers une page de confirmation
+    header('Location: index.php');
+    exit;
+  }
 
-        <label for="emploi">Emploi :</label>
-        <select id="emploi" name="emploi">
-          <option value="">Sélectionner un emploi</option>
-          <option value="developpeur">Développeur</option>
-          <option value="designer">Designer</option>
-          <option value="consultant">Consultant</option>
-          <option value="marketing">Marketing</option>
-        </select><br><br>
-    
-    
-        <label for="subject">Sujet :</label>
-        <input type="text" id="subject" name="subject" required>
-    
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" required></textarea>
-    
-        <button type="submit">Envoyer</button>
-      </form>
-      </div>
+
+
+}
+?> 
+
+
+<script src="js/fonctions.js"></script>
+
+
+  </body>
+  </html>
+
+
+  
+
+
+
+
+
