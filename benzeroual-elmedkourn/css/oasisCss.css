@@ -1,0 +1,141 @@
+nav {
+    background-color: #ff7606;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to left, #e46803, #d84343);
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    float: left;
+  }
+  
+  nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+  }
+  
+  nav li a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .imageSite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  body {
+    background-image: linear-gradient(to left, #fabe18, #e4862f);
+  }
+  
+  .image-container {
+    text-align: center; /* Centrer l'image horizontalement */
+    margin-top: 20px; /* Ajouter une marge supérieure pour l'espacement */
+  }
+
+  figcaption {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+    margin-top: 10px;
+  }
+
+  h1 {
+    color: red;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px; 
+    height: 100%;
+    background-color: #d84343;
+    color: #fff;
+    padding: 10px; 
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin-bottom: 10px;
+  }
+  
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .menu a:hover {
+    color: #ffd700;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: auto;
+  }
+
+
+  #monDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+
+  #monDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #911f1b;
+    padding: 0.7em 1.4em;
+    border: none;
+    border-radius: 0.4em;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+  }
+
+  button a {
+    text-decoration: none;
+    color: inherit;
+  }
+
