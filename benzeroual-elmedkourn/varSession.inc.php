@@ -150,7 +150,6 @@ foreach ($boulangerie as $produit) {
 
     $sql = "INSERT INTO produits (ref, nom, prix, description, image, categorie) VALUES ('$ref', '$nom', '$prix', '$description', '$image', 'boulangerie')";
 }
-print_r($sql);
 // Insertion des données de la pâtisserie
 foreach ($patisserie as $produit) {
     $ref = $produit['ref'];
@@ -162,7 +161,6 @@ foreach ($patisserie as $produit) {
     $sql = "INSERT INTO produits (ref, nom, prix, description, image, categorie) VALUES ('$ref', '$nom', '$prix', '$description', '$image', 'patisserie')";
 
 }
-print_r($sql);
 
 // Insertion des données de la viennoiserie
 foreach ($viennoiserie as $produit) {
@@ -175,11 +173,8 @@ foreach ($viennoiserie as $produit) {
     $sql = "INSERT INTO produits (ref, nom, prix, description, image, categorie) VALUES ('$ref', '$nom', '$prix', '$description', '$image', 'viennoiserie')";
 
 }
-print_r($sql);
 
-
-
-    
+  
  
 // // Encodez votre tableau en JSON
 // $json_data = json_decode($boulangerie);
