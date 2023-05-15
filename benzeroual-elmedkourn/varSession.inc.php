@@ -174,6 +174,7 @@ foreach ($viennoiserie as $produit) {
 
 }
 
+print_r(SQLite3::version());
   
  
 // // Encodez votre tableau en JSON
