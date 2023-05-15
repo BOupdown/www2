@@ -133,6 +133,52 @@
             "description" => "La tarte Tatin : cette tarte aux pommes renversée est souvent considérée comme une viennoiserie en raison de sa croûte feuilletée et croustillante. "
         )
         );
+
+$host = "localhost";
+$dbname = "Oasisdata";
+$username = "Oasis";
+$password = "aequo3AVoo4y";
+        
+
+// Insertion des données de la boulangerie
+foreach ($boulangerie as $produit) {
+    $ref = $produit['ref'];
+    $nom = $produit['nom'];
+    $prix = $produit['prix'];
+    $description = $produit['description'];
+    $image = $produit['image'];
+
+    $sql = "INSERT INTO produits (ref, nom, prix, description, image, categorie) VALUES ('$ref', '$nom', '$prix', '$description', '$image', 'boulangerie')";
+}
+print_r($sql);
+// Insertion des données de la pâtisserie
+foreach ($patisserie as $produit) {
+    $ref = $produit['ref'];
+    $nom = $produit['nom'];
+    $prix = $produit['prix'];
+    $description = $produit['description'];
+    $image = $produit['image'];
+
+    $sql = "INSERT INTO produits (ref, nom, prix, description, image, categorie) VALUES ('$ref', '$nom', '$prix', '$description', '$image', 'patisserie')";
+
+}
+print_r($sql);
+
+// Insertion des données de la viennoiserie
+foreach ($viennoiserie as $produit) {
+    $ref = $produit['ref'];
+    $nom = $produit['nom'];
+    $prix = $produit['prix'];
+    $description = $produit['description'];
+    $image = $produit['image'];
+
+    $sql = "INSERT INTO produits (ref, nom, prix, description, image, categorie) VALUES ('$ref', '$nom', '$prix', '$description', '$image', 'viennoiserie')";
+
+}
+print_r($sql);
+
+
+
     
  
 // // Encodez votre tableau en JSON
