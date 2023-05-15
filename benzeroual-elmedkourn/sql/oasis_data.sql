@@ -1,19 +1,3 @@
-DROP DATABASE IF EXISTS Oasisdata;
-CREATE DATABASE Oasisdata;
-USE Oasisdata;
-
-
-CREATE TABLE produits (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  ref VARCHAR(50) NOT NULL,
-  nom VARCHAR(100) NOT NULL,
-  prix DECIMAL(10, 2) NOT NULL,
-  description TEXT NOT NULL,
-  image VARCHAR(255) NOT NULL,
-  categorie VARCHAR(50) NOT NULL
-);
-
-
 INSERT INTO produits (ref, nom, prix, description, image, categorie) VALUES ('ref1', 'Baguette', '1.0 euros', 'La baguette traditionnelle française, croustillante à l'extérieur et moelleuse à l'intérieur.', 'img/baguette.jpg', 'boulangerie')
 INSERT INTO produits (ref, nom, prix, description, image, categorie) VALUES ('ref2', 'Pain rond', '1.50 euros', 'Un pain rond aux notes légèrement sucrées, parfait pour les sandwiches ou les tartines.', 'img/painrond.jpeg', 'boulangerie')
 INSERT INTO produits (ref, nom, prix, description, image, categorie) VALUES ('ref3', 'Couronne Bordelaise', '1.5 euros', 'Une couronne de pain aux accents de vin rouge de Bordeaux, idéale pour accompagner une planche de charcuterie.', 'img/couronneBordelaise.jpg', 'boulangerie')

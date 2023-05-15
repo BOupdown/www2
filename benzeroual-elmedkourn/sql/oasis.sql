@@ -1,0 +1,14 @@
+DROP DATABASE IF EXISTS Oasisdata;
+CREATE DATABASE Oasisdata;
+USE Oasisdata;
+
+
+CREATE TABLE produits (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  ref VARCHAR(50) NOT NULL,
+  nom VARCHAR(100) NOT NULL,
+  prix DECIMAL(10, 2) NOT NULL,
+  description TEXT NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  categorie VARCHAR(50) NOT NULL
+);
