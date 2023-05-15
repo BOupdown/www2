@@ -58,6 +58,8 @@
     </style>
 </head>
 <?php
+session_start();
+
 $data_json = file_get_contents("user.json");
 $users = json_decode($data_json, true);
 $error = false;
@@ -66,9 +68,11 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     foreach ($users as $u) {
         if ($u["username"] == $_POST["username"] && $u["password"] == $_POST["password"]) {
             $connect = true;
+            unset($_SESSION['cart']);
+            $_SESSION["username"] = $u["username"];
         }
     }
-        
+
     if ($connect) {
         header('Location: index.php');
     } else {

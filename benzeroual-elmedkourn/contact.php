@@ -84,7 +84,7 @@
     </div>
 
     <?php
-    session_start();
+    // session_start();
     ?>
 
     <h1>Formulaire de contact</h1>

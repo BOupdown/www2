@@ -60,10 +60,17 @@
 
         echo "<div class='tab1'>";
         echo "<table border='1'>";
-        echo "<tr><th>Image</th><th>Ref</th><th>Nom</th><th>Prix</th><th>Descriptif</th><th>Panier</th></tr>";
+        echo "<tr><th>Image</th><th>Ref</th><th>Nom</th><th>Prix</th><th>Descriptif</th>";
+        if (isset($_SESSION["username"]) && $_SESSION["username"] == "admin") {
+            echo "<th>Stock</th>";
+        }
+        echo "<th>Panier</th></tr>";
 
         foreach ($el as &$produit) {
             echo "<tr><td>" . "<img src='" . $produit["image"] . "' style='max-width: 300px;'>" . "</td>  <td>" . $produit["ref"] . "</td><td>" . $produit["nom"] . "</td><td>" . $produit["prix"] . "</td><td>" . $produit["description"] . "</td>";
+            if (isset($_SESSION["username"]) && $_SESSION["username"] == "admin") {
+                echo "<td>" . $produit["stock"] . "</td>";
+            }
             echo "<td style=''>";
             echo "<form action='panier.php' method='post'>";
             echo "<input type='hidden' name='nom' value='{$produit['nom']}'>";

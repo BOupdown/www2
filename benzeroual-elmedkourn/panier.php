@@ -28,50 +28,74 @@
         </nav>
     </div>
     <br><br>
-<?php
-include 'varSession.inc.php';
+    <?php
+    session_start();
+    include 'varSession.inc.php';
 
-if (!isset($_SESSION['cart'])) {
-  $_SESSION['cart'] = array();
-}
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
 
-if (isset($_POST['nom']) && isset($_POST['qte'])) {
-  if (isset($_SESSION['cart'][$_POST["nom"]])) {
-    $_SESSION['cart'][$_POST["nom"]] += $_POST['qte'];
-  } else {
-    $_SESSION['cart'][$_POST["nom"]] = $_POST['qte'];
-  }
-
-  unset($_POST["nom"]);
-  unset($_POST["qte"]);
-}
-
-        echo "<div class='tab1'>";
-        echo "<table border='1'>";
-        echo "<tr><th>Image</th><th>Ref</th><th>Nom</th><th>Prix</th><th>Descriptif</th><th>Quantité</th></tr>";
-
-        foreach ($boulangerie as &$p) {
-          if (isset($_SESSION['cart'][$p["nom"]])) {
-            echo "<tr><td>" . "<img src='" . $p["image"] . "' style='max-width: 300px;'>" . "</td>  <td>" . $p["ref"] . "</td><td>" . $p["nom"] . "</td><td>" . $p["prix"] . "</td><td>" . $p["description"] . "</td><td>".$_SESSION["cart"][$p["nom"]]."</td>";
-            echo "</tr>";
-          }
+    if (isset($_POST['nom']) && isset($_POST['qte'])) {
+        if ((int)$_POST["qte"] != 0) {
+            if (isset($_SESSION['cart'][$_POST["nom"]])) {
+                $_SESSION['cart'][$_POST["nom"]] += (int)$_POST['qte'];
+            } else {
+                $_SESSION['cart'][$_POST["nom"]] = (int)$_POST['qte'];
+            }
         }
-        foreach ($patisserie as &$p) {
-          if (isset($_SESSION['cart'][$p["nom"]])) {
-            echo "<tr><td>" . "<img src='" . $p["image"] . "' style='max-width: 300px;'>" . "</td>  <td>" . $p["ref"] . "</td><td>" . $p["nom"] . "</td><td>" . $p["prix"] . "</td><td>" . $p["description"] . "</td><td>".$_SESSION["cart"][$p["nom"]]."</td>";
-            echo "</tr>";
-          }
+
+        unset($_POST["nom"]);
+        unset($_POST["qte"]);
+    }
+
+    if (isset($_POST['commande']) && isset($_SESSION['cart'])) {
+        $all = get_all();
+        foreach ($_SESSION["cart"] as $name => $row) {
+            $stock = 0;
+            foreach ($all as $a) {
+                if ($a["nom"] == $name) {
+                    $stock = $a["stock"];
+                }
+            }
+            $stock -= $row;
+            update_stock($name, $stock);
         }
-        foreach ($viennoiserie as &$p) {
-          if (isset($_SESSION['cart'][$p["nom"]])) {
-            echo "<tr><td>" . "<img src='" . $p["image"] . "' style='max-width: 300px;'>" . "</td>  <td>" . $p["ref"] . "</td><td>" . $p["nom"] . "</td><td>" . $p["prix"] . "</td><td>" . $p["description"] . "</td><td>".$_SESSION["cart"][$p["nom"]]."</td>";
+
+        unset($_SESSION["cart"]);
+        unset($_POST["commande"]);
+    }
+
+    echo "<div class='tab1'>";
+    echo "<table border='1'>";
+    echo "<tr><th>Image</th><th>Ref</th><th>Nom</th><th>Prix</th><th>Descriptif</th><th>Quantité</th></tr>";
+
+    foreach ($boulangerie as &$p) {
+        if (isset($_SESSION['cart'][$p["nom"]])) {
+            echo "<tr><td>" . "<img src='" . $p["image"] . "' style='max-width: 300px;'>" . "</td>  <td>" . $p["ref"] . "</td><td>" . $p["nom"] . "</td><td>" . $p["prix"] . "</td><td>" . $p["description"] . "</td><td>" . $_SESSION["cart"][$p["nom"]] . "</td>";
             echo "</tr>";
-          }
         }
-        echo "</table>";
+    }
+    foreach ($patisserie as &$p) {
+        if (isset($_SESSION['cart'][$p["nom"]])) {
+            echo "<tr><td>" . "<img src='" . $p["image"] . "' style='max-width: 300px;'>" . "</td>  <td>" . $p["ref"] . "</td><td>" . $p["nom"] . "</td><td>" . $p["prix"] . "</td><td>" . $p["description"] . "</td><td>" . $_SESSION["cart"][$p["nom"]] . "</td>";
+            echo "</tr>";
+        }
+    }
+    foreach ($viennoiserie as &$p) {
+        if (isset($_SESSION['cart'][$p["nom"]])) {
+            echo "<tr><td>" . "<img src='" . $p["image"] . "' style='max-width: 300px;'>" . "</td>  <td>" . $p["ref"] . "</td><td>" . $p["nom"] . "</td><td>" . $p["prix"] . "</td><td>" . $p["description"] . "</td><td>" . $_SESSION["cart"][$p["nom"]] . "</td>";
+            echo "</tr>";
+        }
+    }
+    echo "</table>";
 
-        echo "</div>";
+    echo "</div>";
 
-?>
+    echo "<form action='panier.php' method='post'>";
+    echo "<input type='hidden' name='commande' value='aa'>";
+    echo "<div style='margin: 10px'/>";
+    echo "<button style='width:70%' class='panier' type='submit'>Valider</button>";
+    echo "</form>";
 
-
+    ?>

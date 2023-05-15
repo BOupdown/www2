@@ -1,6 +1,6 @@
     <?php
     // Démarrer la session
-    session_start();
+    // session_start();
 
     require('bddData.php');
     // Tableau des catégories avec les produits et leurs informations
