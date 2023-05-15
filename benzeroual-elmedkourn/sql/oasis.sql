@@ -5,5 +5,6 @@ CREATE TABLE produits (
   prix DECIMAL(10, 2) NOT NULL,
   description TEXT NOT NULL,
   image VARCHAR(255) NOT NULL,
-  categorie VARCHAR(50) NOT NULL
+  categorie VARCHAR(50) NOT NULL,
+  stock INT(50) NOT NULL
 );
